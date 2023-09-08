@@ -22,6 +22,7 @@ jobs:
       - name: Create and switch to the pages branch
         run: |
           git stash --include-untracked
+          git fetch
           git switch pages
           git pull origin pages
           git stash apply
