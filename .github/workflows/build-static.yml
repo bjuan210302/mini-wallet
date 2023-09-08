@@ -16,6 +16,8 @@ jobs:
         uses: actions/setup-node@v3
       - run: |
           npx tailwindcss -i ./src/styles-input.css -o ./src/styles.css
+          git add .
+          git commit -m "build-static"
 
       - name: Create and switch to the pages branch
         run: |
