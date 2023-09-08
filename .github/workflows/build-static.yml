@@ -26,7 +26,8 @@ jobs:
           git fetch
           git switch pages
           git restore --source master -- src/*
-          git status
+          cp -r ./src/* .
+          rm -rf ./src
           
           git add .
           git commit -m "automatic commit"
