@@ -12,12 +12,13 @@ jobs:
       - name: Checkout src
         uses: actions/checkout@v4
         with:
+        # dist because sparse wont let me add it of not
           sparse-checkout: |
             src
+            dist 
 
       - name: Create and switch to the pages branch
-        run: |
-          git checkout -b pages
+        run: git checkout -b pages
           
       - name: Build Tailwind
         uses: actions/setup-node@v3
