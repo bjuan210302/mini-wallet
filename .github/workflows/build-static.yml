@@ -24,7 +24,6 @@ jobs:
         run: |
           git switch --orphan pages
           git pull origin pages
-          rm -r ./*
           git stash apply
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
