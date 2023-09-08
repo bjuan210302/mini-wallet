@@ -106,12 +106,10 @@ function createDateGroup(date) {
 
 function createRowForTx(tx, isSingleRow = false) {
     const txRow = document.createElement('tr')
-    txRow.className = 'flex px-2 py-4 rounded-md text-neutral-400 border border-neutral-900 hover:text-white hover:border-neutral-700 transition-all'
+    txRow.className = 'flex px-2 py-4 bg-neutral-900 rounded-md text-neutral-400 border border-neutral-900 hover:text-white hover:border-neutral-700 transition-all'
 
     if (isSingleRow)
-        txRow.className += ' bg-emerald-700'
-    else
-        txRow.className += ' bg-neutral-900'
+        txRow.className += ' drop-shadow-[0_0px_35px_rgba(16,185,129,0.2)]'
 
     txRow.innerHTML =
         `
@@ -123,8 +121,7 @@ function createRowForTx(tx, isSingleRow = false) {
     if (isSingleRow) {
         new Promise(r => {
             setTimeout(() => {
-                txRow.classList.remove('bg-emerald-700')
-                txRow.classList.add('bg-neutral-900')
+                txRow.classList.remove('drop-shadow-[0_0px_35px_rgba(16,185,129,0.2)]')
                 r('')
             }, 500)
         })
