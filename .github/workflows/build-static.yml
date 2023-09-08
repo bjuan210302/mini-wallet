@@ -18,10 +18,10 @@ jobs:
           rm .gitignore
           npx tailwindcss -i ./src/styles-input.css -o ./src/styles.css
           mv ./src/* .
-          git stash
 
       - name: Create and switch to the pages branch
         run: |
+          git stash
           git switch --orphan pages
           git pull origin pages
           git stash apply
