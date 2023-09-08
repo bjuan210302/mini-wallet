@@ -16,15 +16,13 @@ jobs:
         uses: actions/setup-node@v3
       - run: |
           npx tailwindcss -i ./src/styles-input.css -o ./src/styles.css
-          cp ./src/* .
 
       - name: Create and switch to the pages branch
         run: |
           git stash
           git fetch
           git switch pages
-          rm ./*
-          git stash pop
+          git restore --source master -- /src/*
           git status
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
