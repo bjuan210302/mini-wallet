@@ -19,10 +19,9 @@ jobs:
 
       - name: Create and switch to the pages branch
         run: |
-          git stash
           git fetch
           git switch pages
-          git restore --source master -- /src/*
+          git restore --source master -- src/*
           git status
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
