@@ -20,10 +20,10 @@ jobs:
 
       - name: Create and switch to the pages branch
         run: |
-          git stash --include-untracked
+          git stash
           git fetch
           git switch pages
-          git status
+          rm ./*
           git stash pop
           git status
           git config user.name 'github-actions[bot]'
