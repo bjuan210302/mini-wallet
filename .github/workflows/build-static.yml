@@ -24,7 +24,6 @@ jobs:
           git stash --include-untracked
           git fetch
           git switch pages
-          git pull origin pages
           git stash apply
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
